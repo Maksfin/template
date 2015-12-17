@@ -1,0 +1,61 @@
+sidebar.sidebar
+	.wrap-sidebar
+		.sidebar__filter
+			+ul('sidebar', sortTop, 1, true)
+		.accordeon
+			ul.accordeon__list
+				li.accordeon__item
+					a(href="#").accordeon__trigger.accordeon__trigger-close Наличие в магазине
+					.accordeon__inner
+						ul.choise__list
+							each item in items
+								li.choise__item
+									label.choise__item-label
+										input(type="radio" class="choise__item-input" name="availability" value= item)
+										.choise__item-elem
+										.choise__item-text= item
+				li.accordeon__item
+					a(href="#").accordeon__trigger.accordeon__trigger-close Бренды
+					.accordeon__inner
+						ul.choise__list.choise__list_checkbox
+							each item in brands
+								li.choise__item
+									label.choise__item-label
+										input(type="checkbox" class="choise__item-input" name="check" value= item)
+										.choise__item-elem
+										.choise__item-text= item
+						a(href="#" class="accordeon__reset")
+							| Сбросить фильтр
+				li.accordeon__item
+					a(href="#").accordeon__trigger.accordeon__trigger-close Цена
+					.accordeon__inner
+						.price
+							.price__left
+								span.price__text от
+								input(type="text" placeholder="100" class="price__input-from")
+							.price__right
+								span.price__text до
+								input(type="text" placeholder="13 000" class="price__input-to")
+						#slider-range 
+				li.accordeon__item
+					a(href="#").accordeon__trigger.accordeon__trigger-close Цвета
+					.accordeon__inner.accordeon__inner_clear
+						ul.choise__list-colors
+							each color in colors
+								li.choise__item-colors
+									a(href="#" class="choise__link-colors" style="background-color:#" + color)
+				li.accordeon__item.choise__list_checkbox
+					a(href="#").accordeon__trigger.accordeon__trigger-close Операционные системы
+					.accordeon__inner
+						ul.choise__list
+							each item in os
+								li.choise__item
+									label.choise__item-label
+										input(type="checkbox" class="choise__item-input" name="check" value= item)
+										.choise__item-elem
+										.choise__item-text= item
+						a(href="#" class="accordeon__reset")
+							| Сбросить фильтр
+
+
+

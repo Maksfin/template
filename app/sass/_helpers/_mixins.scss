@@ -1,0 +1,178 @@
+ // Fonts generator
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+	$src: null;
+
+	$extmods: (
+		eot: "?",
+		svg: "#" + str-replace($name, " ", "_")
+	);
+
+	$formats: (
+		otf: "opentype",
+		ttf: "truetype"
+	);
+
+	@each $ext in $exts {
+		$extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+		$format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+		$src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+	}
+
+	@font-face {
+		font-family: quote($name);
+		font-style: $style;
+		font-weight: $weight;
+		src: $src;
+	}
+}
+
+ // Inline-block
+@mixin inlineblock ($value: top){
+	display: inline-block;
+	vertical-align: $value;
+}
+
+// Absolute centered
+@mixin center {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	margin: auto;
+}
+
+// Clearfix
+@mixin clearfix{
+
+	&:before,
+	&:after {
+		content: "";
+		display: table;
+	}
+
+	&:after {
+		clear:both;
+	}
+}
+
+
+// Color placeholder
+@mixin placeholder($font, $text-indent, $transition, $color: #000) {
+    &::-webkit-input-placeholder {
+        color: $color;
+        font-size: $font;
+        text-indent: $text-indent;
+        @include transition($transition);
+
+    }
+    &:-moz-placeholder {
+        color: $color;
+        font-size: $font;
+        text-indent: $text-indent;
+        @include transition($transition);
+
+    }
+    &::-moz-placeholder {
+        color: $color;
+        font-size: $font;
+        text-indent: $text-indent;
+        @include transition($transition);
+
+    }
+    &:-ms-input-placeholder {
+        color: $color;
+        font-size: $font;
+        text-indent: $text-indent;
+        @include transition($transition);
+
+    }
+}
+@mixin border-radius ($radius: 5px) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius:    $radius;
+	border-radius:         $radius;
+
+	-moz-background-clip:    padding;
+	-webkit-background-clip: padding-box;
+	background-clip:         padding-box;
+}
+
+@mixin box-shadow ($string...) {
+	-webkit-box-shadow: $string;
+	-moz-box-shadow:    $string;
+	box-shadow:         $string;
+}
+
+@mixin transition ($transition...) {
+	-webkit-transition: $transition;
+	-moz-transition:    $transition;
+	-ms-transition:     $transition;
+	-o-transition:      $transition;
+	transition:      $transition;
+}
+
+@mixin transform ($axis: "both") {
+  position: absolute;
+  @if $axis == "y" {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  @if $axis == "x" {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+  @if $axis == "both" {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+}
+
+@mixin linearGradient($top, $bottom, $offset: top){
+    background: $top; /* Old browsers */
+    background: -moz-linear-gradient($offset,  $top 0%, $bottom 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient($offset,  $top 0%,$bottom 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient($offset,  $top 0%,$bottom 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient($offset,  $top 0%,$bottom 100%); /* IE10+ */
+    background: linear-gradient(to top,  $top 0%, $bottom 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}
+
+// Sprite generator
+@mixin get-sprite ($map, $sprite, $repeat: no-repeat, $height: true, $width: true) {
+	$sprite-image: sprite-file($map, $sprite);
+	$sprite-map: sprite-url($map);
+	$sprite-position: sprite-position($map, $sprite);
+	$sprite-layout: smart;
+
+	background: $sprite-map $sprite-position no-repeat;
+
+	@if ($height == true) {
+		$sprite-height: image-height($sprite-image);
+	 	height: $sprite-height;
+	}
+
+	@if ($width == true) {
+		$sprite-width: image-width($sprite-image);
+		width: $sprite-width;
+	}
+}
+
+@mixin fontSize($sizeValue: 1.6) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}

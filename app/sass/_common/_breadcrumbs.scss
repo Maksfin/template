@@ -1,0 +1,35 @@
+.breadcrumbs {
+	margin-bottom: 27px;
+}
+
+.breadcrumbs__item_active {
+	.breadcrumbs__link {		
+				color: $main_orange;
+				text-decoration:underline;
+			}
+		}
+.breadcrumbs__item {
+		@include inlineblock(middle);
+		
+		&:before {
+			content: ">";
+			margin: 0 4px;
+			font-size: $font-size_main;
+			@include inlineblock(middle);
+			line-height: $font-size_main + 2px;
+		}
+		&:first-child {
+			&:before {
+				display: none;
+			}
+		}
+	}
+	
+.breadcrumbs__link {
+	@include inlineblock(middle);
+	text-decoration: none;
+	font-size: $font-size_main;
+	line-height: $font-size_main + 2px;
+	color: $main_grey;
+}
+	

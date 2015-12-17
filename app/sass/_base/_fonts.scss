@@ -1,0 +1,5 @@
+// Main fonts
+@include font-face( 'OpensansReqular', '#{$path-fonts}OpenSans', normal, normal, eot woff ttf svg);
+@include font-face( 'OpensansSemibold', '#{$path-fonts}OpenSans-Semibold', normal, normal, eot woff ttf svg);
+@include font-face( 'OpensansBold', '#{$path-fonts}OpenSans-Bold', normal, normal, eot  woff ttf svg);
+

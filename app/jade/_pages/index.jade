@@ -1,0 +1,80 @@
+extends ../main
+
+block title
+	| Каталог
+
+block content
+	article.content-wrapper
+		.container
+			//- .breadcrumbs
+			//- 	//- +ul('breadcrumbs', breadList, 1, true)
+			//- h2.headline
+			//- 	| Мобильные телефоны
+			//- .wrap-content
+			//- 	include ../_common/_sidebar
+			//- 	.content
+			//- 		.sort
+			//- 			.sort__left
+			//- 				.sort__select-wrap
+			//- 					.sort__title
+			//- 						| Cортировать по
+			//- 					.sort__select
+			//- 						select.sort__select-item
+			//- 							each option in options
+			//- 								option(value="")= option
+			//- 			.sort__right
+			//- 				.sort__title.sort__title_view
+			//- 					| Вид каталога
+			//- 				.sort__view
+			//- 					ul.sort__view-list
+			//- 						each item in views
+			//- 							li(class="sort__view-item"+ ' ' + "sort__view-item_" + item data-view= item)
+			//- 								a(href="#" class="sort__view-link" title= item)= item
+			//- 									.sort__view-icon
+			//- 		.products
+			//- 			ul.products__list
+			//- 				-for (var i = 0; i < 9; i++)
+			//- 					li.products__item
+			//- 						.products__item-inner
+			//- 							.products__left
+			//- 								.products__slideshow
+			//- 									.products__slideshow-display
+			//- 										a(href="").products__slideshow-display-link
+			//- 											img(src="http://lorempixel.com/500/500/technics/" alt="Image").products__slideshow-display-img
+			//- 										ul.products__slideshow-list
+			//- 											-for (var j = 0; j < 3; j++)
+			//- 												li.products__slideshow-item
+			//- 													a(href="#").products__slideshow-link
+			//- 														img(src="http://lorempixel.com/500/500/technics/" + j alt="ImageSmall").products__slideshow-item-img
+			//- 									.products__article
+			//- 										.products__article-text Артикул
+			//- 										.products__article-number 359110
+			//- 								.products__desc
+			//- 									.products__desc-title Samsung GT-I9301I GALAXY S 3
+			//- 									ul.products__desc-list
+			//- 										- var index = 0;
+			//- 										- for (item in desc)
+			//- 											li(class="products__desc-item" + (!(index++ % 2) ? ' products__desc-item_color' : ''))
+			//- 												.products__desc-left= item
+			//- 												.products__desc-right= desc[item]
+			//- 									div(class="products__rating" data-rating="2")
+			//- 							.products__right
+			//- 								.products__info-top
+			//- 									.products__price 10 990 ₽
+			//- 								.products__info-bottom
+			//- 									a(href="#").products__btn
+			//- 										| В корзину
+			//- 									.products__existence
+			//- 										| В наличии
+			//- 		.pagination
+			//- 			ul.pagination__list
+			//- 				li.pagination__item.pagination__item_prev
+			//- 					a(href="#").pagination__link
+			//- 						.pagination__value
+			//- 				- for (var i = 1; i < 4; i++)
+			//- 					li.pagination__item
+			//- 						a(href="#").pagination__link
+			//- 							.pagination__value= i
+			//- 				li.pagination__item.pagination__item_next
+			//- 					a(href="#").pagination__link
+			//- 						.pagination__value

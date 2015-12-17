@@ -1,0 +1,47 @@
+.pagination {
+	text-align:right;
+	margin-bottom: 25px;
+}
+
+.pagination__list {
+	@include inlineblock();
+}
+
+.pagination__item {
+	width: 26px;
+	height: 26px;
+	@include inlineblock();
+	@include border-radius(3px);
+	border: 1px solid $main_border-grey;
+	position: relative;
+	overflow: hidden;
+}
+
+.pagination__link {
+	@include center;
+	display: block;
+	background: $main_white;
+
+	&:hover {
+		background: #e0e0e0;
+	}
+}
+
+.pagination__value {
+	@include center;
+	text-align:center;
+	line-height:26px;
+	font-size: $font-size_main - 2px;
+	font-family: $font-bold;
+	color: #7f7f7f;
+}
+
+$items: prev, next;
+
+@each $item in $items {
+	.pagination__item_#{$item} {
+		.pagination__value {
+			@include get-sprite($general-sprite, $item);
+		}
+	}
+}
