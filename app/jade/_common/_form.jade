@@ -2,27 +2,15 @@ form(action="index.php").form
 	.form__inner
 		label.form__label
 			.form__label-title Имя
-			input(type="text" placeholder="Как к вам обращаться?").form__label-input
+			input(type="text" name="name" placeholder="Как к вам обращаться?" data-validation="text").form__label-input
 		label.form__label
 			.form__label-title Телефон
-			input(type="tel" placeholder="Ваш номер телефона" name="phone" maxlength='10').form__label-input
+			input(type="tel" placeholder="Ваш номер телефона" name="phone" maxlength='10' data-validation="phone").form__label-input
 		label.form__label
 			.form__label-title Email
-			input(type="email" placeholder="Ваша почта в формате email@mail.ru" name="mail").form__label-input
+			input(type="email" placeholder="Ваша почта в формате email@mail.ru" name="mail" data-validation="mail").form__label-input
 		label.form__label
 			.form__label-title Сообщение
 			textarea(placeholder="О чем поговорим?" name="message").form__label-input.form__label-input_textarea
 		.form__submit-wrap
 			input(type="submit" value="Отправить").form__submit
-.wrapper__tooltip		
-	.tooltip.tooltip_top
-		.tooltip__inner Содержание тултипов 1
-.wrapper__tooltip				
-	.tooltip.tooltip_right
-		.tooltip__inner Содержание тултипов	2
-.wrapper__tooltip		
-	.tooltip.tooltip_bottom
-		.tooltip__inner Содержание тултипов 3
-.wrapper__tooltip		
-	.tooltip.tooltip_left
-		.tooltip__inner Содержание тултипов 4

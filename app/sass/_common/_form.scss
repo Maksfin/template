@@ -4,7 +4,7 @@
   background: #f6f5f5;
 }
 .form__inner {
-  padding: 20px;
+  padding: 15px;
 }
 
 .form__label-title {
@@ -29,11 +29,11 @@
   @include box-shadow (0px -1px 0px 0px #f1f2f2);
   @include linearGradient (rgb( 233, 231, 231 ), rgb( 251, 249, 249 ), 90deg);
   font-size: $font-size_main + 2px;
-  @include placeholder(14px, 0px, .4s, #c7c6c6);
+  @include placeholder( 0px);
 }
 
 .form__label-input_textarea {
-    min-height: 200px;
+    min-height: em(200px);
     padding: 0px 10px 10px 10px;
     resize: none;
 }
@@ -41,27 +41,8 @@
 .form__label-input:focus {
   border: 1px solid #858383;
   @include box-shadow (0px 2px 16px 0px #b2b2b2);
-  @include border-radius(3px);
   overflow: hidden;
-}
-
-:focus::-webkit-input-placeholder{
-        color: transparent;
-        font-size: 0px;
-        text-indent: 500px;
-        @include transition(.4s);
-
-    &:-moz-placeholder {
-        color: transparent;
-    }
-
-    &::-moz-placeholder {
-        color: transparent;
-    }
-
-    &:-ms-input-placeholder {
-        color: transparent;
-  }
+  @include placeholder(-9999px);
 }
 
 .form__submit-wrap {
@@ -73,45 +54,44 @@
   height: 35px;
   line-height: 30px;
   border:none;
-  border: 1px solid #9c9c9c; /* Запасной стиль */
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid #9c9c9c;
   @include border-radius(8px);
-  @include box-shadow (0px 1px 0px 0px #c8ced4 inset);
+  @include box-shadow (0px 2px 10px 0px #c8ced4 inset);
   text-shadow: 0 1px 0 rgba(0,0,0,0.4);
   color: #fff;
   overflow: hidden;
   @include linearGradient (#801010, #db4646);
   font-size: $font-size_main + 4px;
-  @include transition(.3s);
 
   &:hover {
+    background: #801010; /* Запасной стиль */
     @include linearGradient (#db4646, #801010);
   }
 
   &:active {
     top:2px;
     position: relative;
-    @include linearGradient (#801010, #801010);
-    // @include box-shadow (0px 0px 0px 0px); 
+    background: #801010;
   }
 }
 
 /*------  Стилизация тултипов  ------*/
 .tooltip {
-  margin: 20px;
   display: inline-block;
-  position: relative;
+  position: absolute;
 }
 
 .tooltip__inner {
-  max-width:200px;
+  max-width:270px;
   background-color: red;
-  padding: 6px 12px;
+  padding: 5px 12px;
   color: #fff;
   text-align: center;
   border-color: red;
-  border-radius: 8px;
+  border-radius: 12px;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   &:after {
     content:"";
@@ -132,7 +112,7 @@
   .tooltip__inner {
     &:after {
       top: 50%;
-      margin-top: -9px;
+      margin-top: -10px;
       margin-left: 3px;
       margin-right: 3px;
     }
@@ -167,3 +147,8 @@ $positions: top, left, right, bottom;
     }
   }
 }
+
+.error {
+  border: 1px solid red;
+}
+

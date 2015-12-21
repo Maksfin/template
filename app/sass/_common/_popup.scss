@@ -1,0 +1,41 @@
+.popup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: none;
+}
+
+.popup__overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(00, 00, 00, .5);
+}
+
+.popup__content {
+	@include transform();
+	padding: 50px;
+	@include border-radius(50%);
+	background: #ffffff;
+}
+
+.popup__close {
+	display: block;
+	@include border-radius(50%);
+	position: absolute;
+	height: 25px;
+	width: 25px;
+	border: 2px solid #fff;
+	top: -10px;
+	right: -10px;
+	text-align: center;
+	color:#fff;
+	text-decoration:none;
+	font-size: 20px;
+	line-height: 20px;
+	background:#000;
+}

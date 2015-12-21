@@ -58,7 +58,7 @@
 
 
 // Color placeholder
-@mixin placeholder($font, $text-indent, $transition, $color: #000) {
+@mixin placeholder($text-indent, $transition: .2s, $font: 14px, $color: #c7c6c6) {
     &::-webkit-input-placeholder {
         color: $color;
         font-size: $font;
@@ -88,6 +88,7 @@
 
     }
 }
+
 @mixin border-radius ($radius: 5px) {
 	-webkit-border-radius: $radius;
 	-moz-border-radius:    $radius;
@@ -149,7 +150,7 @@
     background: -o-linear-gradient($offset,  $top 0%,$bottom 100%); /* Opera 11.10+ */
     background: -ms-linear-gradient($offset,  $top 0%,$bottom 100%); /* IE10+ */
     background: linear-gradient(to top,  $top 0%, $bottom 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$top, endColorstr=$bottom,GradientType=0 ); /* IE6-9 */
 }
 
 // Sprite generator
@@ -175,4 +176,17 @@
 @mixin fontSize($sizeValue: 1.6) {
   font-size: ($sizeValue * 10) + px;
   font-size: $sizeValue + rem;
+}
+
+// Media queries
+@mixin media ($max-width: 1200px) {
+	@media (max-width: $max-width) {
+		@content
+	}
+}
+
+// Responsive units
+@function em($target, $context: $base-font-size) {
+	@if $target == 0 { @return 0 }
+	@return $target / $context + 0em;
 }

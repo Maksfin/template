@@ -17,6 +17,9 @@ html(lang="ru-RU")
 			block title
 
 		include _common/_head-bottom
+		<!--[if lt IE 9]>
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js")
+		<![endif]-->
 			
 	body
 		<!--[if lt IE 8]>
@@ -26,6 +29,7 @@ html(lang="ru-RU")
 		.wrapper
 			.maincontent
 					include _common/_form
+					include _common/_popup
 					
 		//- 		include _common/_header
 

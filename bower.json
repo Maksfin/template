@@ -6,6 +6,7 @@
     "modernizer": "~2.8.2",
     "jquery-ui": "~1.11.4",
     "select2": "~4.0.0",
-    "jquery": "1.11.3"
+    "jquery": "1.11.3",
+    "jquery.maskedinput": "~1.4.1"
   }
 }

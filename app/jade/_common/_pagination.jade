@@ -1,0 +1,12 @@
+.pagination
+	ul.pagination__list
+		li.pagination__item.pagination__item_prev
+			a(href="#").pagination__link
+				.pagination__value
+		- for (var i = 1; i < 4; i++)
+			li.pagination__item
+				a(href="#").pagination__link
+					.pagination__value= i
+		li.pagination__item.pagination__item_next
+			a(href="#").pagination__link
+				.pagination__value
