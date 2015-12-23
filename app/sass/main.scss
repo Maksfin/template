@@ -10,19 +10,24 @@
 @import '_base/_fonts';
 @import '_base/_overall';
 
-// Sprites general elements
+// ---------- Sprites general elements ---------------
 // $general-sprite: sprite-map('elements/*.png', $spacing: 70px);
 
-// Plugins
-@import '_plugins/_jquery-ui';
-@import '_plugins/_select2';
 
-// Widgets
-@import '_widgets/_select';
+// ---------- Plugins ----------
+// @import '_plugins/_jquery-ui';
+// @import '_plugins/_select2';
 
-// Section
-@import '_common/_form';
-@import '_common/_popup';
+
+// ---------- Widgets ----------
+// @import '_widgets/_select';
+// @import '_widgets/_slider';
+ // @import '_plugins/_bxslider';
+
+
+// ---------- Section ----------
+// @import '_common/_form';
+// @import '_common/_popup';
 // @import '_common/_navigation';
 // @import '_common/_breadcrumbs';
 // @import '_common/_sidebar';

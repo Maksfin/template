@@ -1,0 +1,80 @@
+.bx-wrapper {
+	border: none !important;
+	position:relative;
+	@include box-shadow(0px 0px 0px);
+
+	img {
+		width: 100%;
+		height: auto;
+	}
+
+}
+	// Высота области просмотра cлайдера
+	.bx-viewport {
+		// height: 699px !important;
+		background: $bgcolor;
+	}
+
+.bx-wrapper .bx-controls-auto .bx-controls-auto-item {
+	margin-left: 10px;
+	text-indent: -9999px;
+
+	&:first-child {
+		margin-left: 0;
+	}
+}
+
+/* CUSTOM PAGER */
+.bx-controls.bx-has-controls-direction.bx-has-pager,
+.bx-wrapper .bx-default-pager {
+	width: 940px;
+	margin: 0 auto;
+	bottom:100px;
+	padding-left: 15px;
+	text-align: left;
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a {
+	display: block;
+	width: 16px;
+	height: 16px;
+	background-color: $white;
+	border: 1px solid #323e7b;
+	@include border-radius(50%);
+	@include transition(.3s);
+}
+
+/* DIRECTION CONTROLS (NEXT / PREV) */
+// Позиционирование контролов
+.bx-controls-direction {
+	bottom: 105px;
+   position: absolute;
+}
+
+// Общие стили
+.bx-wrapper .bx-controls-direction a {
+	width: 16px;
+	height: 25px;
+	top:0;
+
+}
+
+.bx-wrapper .bx-prev {
+	left: -5px;
+	@include get-sprite($general-sprite, slider_prev);
+}
+
+.bx-wrapper .bx-next {
+	left: 135px;
+	@include get-sprite($general-sprite, slider_next);
+}
+
+.bx-wrapper .bx-prev:hover,
+.bx-wrapper .bx-prev:focus {
+	@include get-sprite($general-sprite, slider_prev_hover);
+}
+
+.bx-wrapper .bx-next:hover,
+.bx-wrapper .bx-next:focus  {
+	@include get-sprite($general-sprite, slider_next_hover);
+}

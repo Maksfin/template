@@ -7,6 +7,7 @@ body {
 	font: $font-size_main $font-main;
 	background-color: $main_bg;
 	color: $main_grey;
+	-webkit-font-smoothing: antialiased;
 }
 
 .wrapper {
@@ -24,9 +25,7 @@ body {
 			display: block;
 		}
 }
-.wrap-content {
-	@include clearfix;
-}
+
 .footer {
 	position: relative;
 	margin-top: -$footer-height;
@@ -59,6 +58,6 @@ p {
     margin: 0;
 }
 
-input,textarea{
-	outline: none;
-}
+// input,textarea{
+// 	outline: none;
+// }
