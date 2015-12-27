@@ -3,6 +3,13 @@ $(document).ready(function() {
 	if($('.popup').length) {
 		Popup.init();
 	}
+	
+	//SVG Fallback
+	if(!Modernizr.svg) {
+		$("img[src*='svg']").attr("src", function() {
+			return $(this).attr("src").replace(".svg", ".png");
+		});
+	};
 
 	$('.form').on('submit', function(e) {
 		e.preventDefault();
